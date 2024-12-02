@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci # Instala las dependencias con una instalación limpia
+    build:
+      commands:
+        - npm run build # Construye el proyecto de Angular
+  artifacts:
+    baseDirectory: dist/menu1
+    files:
+      - '**/*' # Incluye todos los archivos generados
+  cache:
+    paths:
+      - node_modules/**/* # Cachea las dependencias
